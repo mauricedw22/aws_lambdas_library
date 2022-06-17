@@ -12,7 +12,7 @@ def lambda_handler(event, context):
     
     sns_published_message = event['Records'][0]['Sns']['Message']
     
-    to_phone_number = '+12408865334'
+    to_phone_number = '<phone-number>'
     
     try:
         response = sns.meta.client.publish(
