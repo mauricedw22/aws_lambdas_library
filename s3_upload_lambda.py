@@ -3,7 +3,7 @@ import urllib
 import boto3
 
 def lambda_handler(event, context):
-    # S3 Object Creation lambda trigger that handles light json file processing
+    # S3 ObjectCreate trigger on a lambda with simple json file processing
     
     s3 = boto3.client('s3')
     
