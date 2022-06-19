@@ -112,6 +112,23 @@ def lambda_handler(event, context):
             }    
           )
     '''
+
+    '''
+    ########################################################
+
+    # QUERIES
+    
+    response = table.query(
+        KeyConditionExpression=Key('mauricedw22').eq('1')
+    )
+    
+    items = response['Items']
+    
+    print(items)
+
+    '''
+
+
     
     return {
         'statusCode': 200,
