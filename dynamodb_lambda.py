@@ -83,7 +83,7 @@ def lambda_handler(event, context):
     
     obj3 = {'mauricedw22':id_date2,'tester':'Dougie','status':'SUCCESS','age':Decimal(33.5)}
     
-    with table.batch_writer() as batch: # overwrite_by_pkeys=['partition_key','sort_key'] -> for Duplicates
+    with table.batch_writer() as batch: # overwrite_by_pkeys=['partition_key','sort_key'] -> for de-Duplicating
         batch.put_item(Item=obj2)
         batch.put_item(Item=obj3)
     '''
