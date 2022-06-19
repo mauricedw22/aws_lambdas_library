@@ -9,8 +9,13 @@ def lambda_handler(event, context):
     table = client.Table('lambdaSample1')
     print(table.table_status)
     
-    id_date = str(datetime.datetime.now())
+    now = datetime.datetime.now()
+    
+    id_date = str(now)
+    id_date2 = str(now + datetime.timedelta(seconds=5))
+    
     print(id_date)
+    print(id_date2)
     
     '''
     ###################
