@@ -135,7 +135,7 @@ def lambda_handler(event, context):
     # Query by Attr
     
     response = table.scan(
-        FilterExpression=Attr('tester').eq('Dougie') # lt(...), gt(...)
+        FilterExpression=Attr('tester').eq('Dougie') # lt(...), gt(...), begins_with('J')
     )
     
     items = response['Items']
@@ -144,7 +144,7 @@ def lambda_handler(event, context):
     
     ####################################################################
 
-    
+
 
 
     
