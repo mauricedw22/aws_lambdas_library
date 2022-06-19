@@ -73,6 +73,22 @@ def lambda_handler(event, context):
         }    
     )
     '''
+
+    ###################################################    
+    
+    '''
+    # BATCH WRITES example
+    
+    obj2 = {'mauricedw22':id_date,'tester':'Dougie','status':'SUCCESS','age':'Prime'}
+    
+    obj3 = {'mauricedw22':id_date2,'tester':'Dougie','status':'SUCCESS','age':Decimal(33.5)}
+    
+    with table.batch_writer() as batch: # overwrite_by_pkeys=['partition_key','sort_key'] -> for Duplicates
+        batch.put_item(Item=obj2)
+        batch.put_item(Item=obj3)
+    '''
+    
+    ########################################################################################
     
     return {
         'statusCode': 200,
