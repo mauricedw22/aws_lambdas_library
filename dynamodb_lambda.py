@@ -89,6 +89,22 @@ def lambda_handler(event, context):
     '''
     
     ########################################################################################
+
+    '''
+    ########################################################################################
+    
+    # BATCH WRITES WITH FOR LOOP 
+    with table.batch_writer() as batch:  
+        for i in range(3):
+          batch.put_item(
+            Item={
+                'mauricedw22':str(i),
+                'tester':'Dougie Fresh ' + str(i),
+                'status':'SUCCESS #' + str(i),
+                'age':str(i*11)
+            }    
+          )
+    '''
     
     return {
         'statusCode': 200,
