@@ -4,6 +4,8 @@ import datetime
 
 client = boto3.client('events')
 
+# This Lambda sends an test event to a custom EventBridge event bus with content-based filter rule (rule match outputs to a receiver Lambda)
+
 def lambda_handler(event, context):
     
     response = client.put_events(
