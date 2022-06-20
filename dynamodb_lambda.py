@@ -145,9 +145,20 @@ def lambda_handler(event, context):
     ####################################################################
 
 
-
-
+    '''
+    ####################################################################
     
+    # Query with AND/OR/NOT logic
+    
+    response = table.scan(
+        FilterExpression=Attr('tester').eq('Dougie') & Attr('age').contains('ime')
+    )
+    
+    items = response['Items']
+    print(items)
+    
+    '''
+        
     return {
         'statusCode': 200,
         'body': 'Record deleted'
