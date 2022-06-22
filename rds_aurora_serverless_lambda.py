@@ -9,7 +9,7 @@ db_credentials_secrets_arn = 'arn:aws:secretsmanager:us-east-1:330202998142:secr
 
 def lambda_handler(event, context):
     response = execute_statement('SELECT * FROM auroraserverless1.Customers')
-    return response['records']  # response['records'][0][0]['longValue'];
+    return response['records']  # response['records'][0][2]['longValue'];
     
 def execute_statement(sql):
     response = rds_client.execute_statement(
