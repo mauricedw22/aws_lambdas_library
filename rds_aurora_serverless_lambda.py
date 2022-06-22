@@ -3,7 +3,7 @@ import boto3
 
 rds_client = boto3.client('rds-data')
 
-db_name = 'auroraserverless1'
+db_name = '<DB_NAME>'
 db_cluster_arn = '<DB_CLUSTER_ARN>'
 db_credentials_secrets_arn = '<SECRETS_ARN>'
 
